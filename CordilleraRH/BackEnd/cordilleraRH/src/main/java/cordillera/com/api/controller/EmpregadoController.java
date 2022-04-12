@@ -31,22 +31,22 @@ public class EmpregadoController {
         this.empregadoRepository = empregadoRepository;
     }
 
-    // find by id
+    // try to find by ID of employee and if not find then throw a NOT_FOUND exception
     @GetMapping("{id}")
     @ResponseStatus(HttpStatus.FOUND)
-    public Empregado findById(@PathVariable Integer id){
+    public Empregado findByIdEmpregado(@PathVariable Integer id){
         return empregadoRepository.findById(id).orElseThrow( 
             () -> new ResponseStatusException(HttpStatus.NOT_FOUND)
         );
     };
 
-    // select all
+    // Bring all the employes
     @GetMapping()
-    public List<Empregado> obterTodos(){
+    public List<Empregado> obterTodosEmpregados(){
         return empregadoRepository.findAll();
     }
 
-    // Save 
+    // Save employee
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
     public Empregado salvarEmpregado(@RequestBody @Valid Empregado empregado){
@@ -55,30 +55,29 @@ public class EmpregadoController {
 
     // update
     @PutMapping("{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void updateEmpregado(@PathVariable Integer id, @RequestBody @Valid Empregado empregado){ 
-            empregadoRepository
+    @ResponseStatus(HttpStatus.CREATED)
+    public void atualizarEmpregado(@PathVariable Integer id, @RequestBody @Valid Empregado empregado){ 
+    	empregadoRepository
                 .findById(id)
-                .map( empregadoExistente -> {
-                    empregado.setId_empregado(empregadoExistente.getId_empregado());
+                .map( empregadoAtualizado -> {
+                    empregado.setId_empregado(empregadoAtualizado.getId_empregado());
                     empregadoRepository.save(empregado);
-                    return empregadoExistente;
-                }).orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente não encontrado") );
+                    return empregadoAtualizado;
+                }).orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Empregado não encontrado") );
     }
 
-
-    // delete     
+    // delete 
     @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deletaEmpregado(@PathVariable Integer id){
-        empregadoRepository
+    public void deletarEmpregado(@PathVariable Integer id){
+    	empregadoRepository
             .findById(id)
             .map( c -> { 
-                empregadoRepository.delete(c);
+            	empregadoRepository.delete(c);
                 return Void.TYPE;
             })
             .orElseThrow( 
-            		() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente não encontrado") 
+            		() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Empregado não encontrado") 
             );
     }
 }

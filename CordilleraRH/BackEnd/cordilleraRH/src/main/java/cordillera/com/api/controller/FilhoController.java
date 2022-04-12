@@ -17,70 +17,69 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import cordillera.com.api.model.components.Empregado_Filhos;
-import cordillera.com.api.model.container.Empregado_FilhosJPA;
+import cordillera.com.api.model.components.Filho;
+import cordillera.com.api.model.container.FilhoJPA;
 
 @RestController
-@RequestMapping("/mainhub/empregado_filho")
-public class Empregado_FilhosController {
-
-    // define o JPA
-    private final Empregado_FilhosJPA empregadosFilhosRepository;
+@RequestMapping("/mainhub/filho_empregado")
+public class FilhoController {
+    
+    private final FilhoJPA filhoRepository;
 
     @Autowired
-    public Empregado_FilhosController(Empregado_FilhosJPA empregadosFilhosRepository){
-        this.empregadosFilhosRepository = empregadosFilhosRepository;
+    public FilhoController(FilhoJPA filhoRepository){
+        this.filhoRepository = filhoRepository;
     }
 
-    // find by id
+    // try to find by ID of employee and if not find then throw a NOT_FOUND exception
     @GetMapping("{id}")
     @ResponseStatus(HttpStatus.FOUND)
-    public Empregado_Filhos findByIdEmpregadoFilho(@PathVariable Integer id){
-        return empregadosFilhosRepository.findById(id).orElseThrow( 
+    public Filho findByIdFilho(@PathVariable Integer id){
+        return filhoRepository.findById(id).orElseThrow( 
             () -> new ResponseStatusException(HttpStatus.NOT_FOUND)
         );
     };
 
-    // selectAll
+    // Bring all the employes
     @GetMapping()
-    public List<Empregado_Filhos> obterTodosEmpregadoFilhos(){
-        return empregadosFilhosRepository.findAll();
+    public List<Filho> obterTodosFilhos(){
+        return filhoRepository.findAll();
     }
 
-    // Save
+    // Save employee
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
-    public Empregado_Filhos salvarEmpregadoFilhos(@RequestBody @Valid Empregado_Filhos empregadoFilhos){
-        return empregadosFilhosRepository.save(empregadoFilhos);
+    public Filho salvarFilho(@RequestBody @Valid Filho empresaEmpregado){
+        return filhoRepository.save(empresaEmpregado);
     }
 
     // update
     @PutMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void updateEmpregadoFilhos(@PathVariable Integer id, @RequestBody @Valid Empregado_Filhos empregadoFilhos){ 
-    	empregadosFilhosRepository
+    public void updateFilho(@PathVariable Integer id, @RequestBody @Valid Filho filho){ 
+    	filhoRepository
                 .findById(id)
-                .map( empregadosFilhosatualizado -> {
-                    empregadoFilhos.setId_empregadoFilho(empregadosFilhosatualizado.getId_empregadoFilho());
-                    empregadosFilhosRepository.save(empregadoFilhos);
-                    return empregadosFilhosatualizado;
-                }).orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Filho(a) não encontrado") );
+                .map( filhoAtualizado -> {
+                    filho.setId_Filho((filhoAtualizado.getId_Filho()));
+                    filhoRepository.save(filho);
+                    return filhoAtualizado;
+                }).orElseThrow( 
+                    () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Filho(a) não encontrado") 
+                );
     }
-
 
     // delete 
     @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deletaEmpregado(@PathVariable Integer id){
-    	empregadosFilhosRepository
+    	filhoRepository
             .findById(id)
             .map( c -> { 
-            	empregadosFilhosRepository.delete(c);
+            	filhoRepository.delete(c);
                 return Void.TYPE;
             })
             .orElseThrow( 
             		() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Filho(a) não encontrado") 
             );
     }
-
 }

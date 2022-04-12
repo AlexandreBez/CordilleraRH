@@ -17,69 +17,67 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import cordillera.com.api.model.components.Empregado_Filhos;
-import cordillera.com.api.model.container.Empregado_FilhosJPA;
+import cordillera.com.api.model.components.Filho_Empregado_RH;
+import cordillera.com.api.model.container.Filho_EmpregadoRHJPA;
 
 @RestController
-@RequestMapping("/mainhub/empregado_filho")
-public class Empregado_FilhosController {
-
-    // define o JPA
-    private final Empregado_FilhosJPA empregadosFilhosRepository;
+@RequestMapping("/mainhub/filhoEmpregadoRH")
+public class Filho_EmpregadoRHController {
+    
+    private final Filho_EmpregadoRHJPA filhoEmpregadoRHRepository;
 
     @Autowired
-    public Empregado_FilhosController(Empregado_FilhosJPA empregadosFilhosRepository){
-        this.empregadosFilhosRepository = empregadosFilhosRepository;
+    public Filho_EmpregadoRHController(Filho_EmpregadoRHJPA empresaEmpregadoRepository){
+        this.filhoEmpregadoRHRepository = empresaEmpregadoRepository;
     }
 
     // find by id
     @GetMapping("{id}")
     @ResponseStatus(HttpStatus.FOUND)
-    public Empregado_Filhos findByIdEmpregadoFilho(@PathVariable Integer id){
-        return empregadosFilhosRepository.findById(id).orElseThrow( 
+    public Filho_Empregado_RH findByIdFilhoEmpregadoRH(@PathVariable Integer id){
+        return filhoEmpregadoRHRepository.findById(id).orElseThrow( 
             () -> new ResponseStatusException(HttpStatus.NOT_FOUND)
         );
     };
 
-    // selectAll
+    // select all
     @GetMapping()
-    public List<Empregado_Filhos> obterTodosEmpregadoFilhos(){
-        return empregadosFilhosRepository.findAll();
+    public List<Filho_Empregado_RH> obterTodosFilhoEmpregadoRh(){
+        return filhoEmpregadoRHRepository.findAll();
     }
 
-    // Save
+    // Save 
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
-    public Empregado_Filhos salvarEmpregadoFilhos(@RequestBody @Valid Empregado_Filhos empregadoFilhos){
-        return empregadosFilhosRepository.save(empregadoFilhos);
+    public Filho_Empregado_RH salvarFilhoEmpregadoRH(@RequestBody @Valid Filho_Empregado_RH filhoEmpregadoRH){
+        return filhoEmpregadoRHRepository.save(filhoEmpregadoRH);
     }
 
     // update
     @PutMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void updateEmpregadoFilhos(@PathVariable Integer id, @RequestBody @Valid Empregado_Filhos empregadoFilhos){ 
-    	empregadosFilhosRepository
+    public void updateFilhoEMpregadoRH(@PathVariable Integer id, @RequestBody @Valid Filho_Empregado_RH filhoEmpregadoRH){ 
+    	filhoEmpregadoRHRepository
                 .findById(id)
-                .map( empregadosFilhosatualizado -> {
-                    empregadoFilhos.setId_empregadoFilho(empregadosFilhosatualizado.getId_empregadoFilho());
-                    empregadosFilhosRepository.save(empregadoFilhos);
-                    return empregadosFilhosatualizado;
+                .map( filhoEmpregadoRHAtualizado -> {
+                    filhoEmpregadoRH.setId_filhoEmpregadoRH((filhoEmpregadoRHAtualizado.getId_filhoEmpregadoRH()));
+                    filhoEmpregadoRHRepository.save(filhoEmpregadoRH);
+                    return filhoEmpregadoRHAtualizado;
                 }).orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Filho(a) não encontrado") );
     }
-
 
     // delete 
     @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deletaEmpregado(@PathVariable Integer id){
-    	empregadosFilhosRepository
+    	filhoEmpregadoRHRepository
             .findById(id)
             .map( c -> { 
-            	empregadosFilhosRepository.delete(c);
+            	filhoEmpregadoRHRepository.delete(c);
                 return Void.TYPE;
             })
             .orElseThrow( 
-            		() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Filho(a) não encontrado") 
+            		() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Empresa/Empregado não encontrado") 
             );
     }
 
