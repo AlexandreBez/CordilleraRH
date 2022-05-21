@@ -10,10 +10,25 @@ import org.springframework.data.repository.query.Param;
 
 public interface EmpresaJPA extends JpaRepository<Empresa, Integer>{
     
-	@Query("select c from Empresa c where c.nome like %:nome% order by nome asc")
+	// buscar por nome para a pagina inicial
+	@Query(
+			"select nome, cnpj "
+			+ "from Empresa c "
+			+ "where c.nome like upper(%:nome%) "
+			+ "order by nome asc"
+	)
 	public List<Empresa> findByName(@Param("nome") String nome);
 	
-	@Query("select c from Empresa c where c.cnpj = :cnpj order by nome asc")
+	// buscar por cnpj para a pagina inicial
+	@Query(
+			"select nome, cnpj "
+			+ "from Empresa c "
+			+ "where c.cnpj = :cnpj "
+			+ "order by nome asc"
+	)
 	public List<Empresa> findByCnpj(@Param("cnpj") String cnpj);
+
+	// ---------------------------------------------------
+	
 	
 }

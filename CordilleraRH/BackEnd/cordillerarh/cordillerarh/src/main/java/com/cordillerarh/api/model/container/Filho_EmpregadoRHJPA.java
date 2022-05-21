@@ -6,4 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface Filho_EmpregadoRHJPA extends JpaRepository<Filho_EmpregadoRH, Integer>{
     
+	
 }
