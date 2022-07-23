@@ -1,0 +1,43 @@
+<ng-container *ngIf="errorMsg">
+    <div class="modalAux">
+        <h5>Opsss.....</h5>
+        <hr>
+        <p>Usuário e/ou senha incorreto.</p>
+        <button id="btnClose" class="btn btn-dark" (click)="closeErrorMsg()">Ok</button>
+    </div>
+    <div class="overlay">
+    </div>
+</ng-container>
+
+<div class="container-fluid formulary" id="containerForm">
+
+    <img src="../../assets/CordilleraRH.png" alt="CordilleraRH">
+
+    <form class="row row-cols-1">
+
+        <div class="col">
+            <label for="username" class="form-label">
+                <i class="bi bi-person"></i>
+                Username
+            </label>
+            <input type="email" id="inputUsername" [ngModelOptions]="{standalone: true}" [(ngModel)]="username" class="form-control" placeholder="example@example.com">
+        </div>
+
+        <div class="col mb-3">
+            <label for="password" class="form-label">
+                <i class="bi bi-lock"></i>
+                Password
+            </label>
+            <input type="password" id="inputPassword" [ngModelOptions]="{standalone: true}" [(ngModel)]="password" name="password"
+                class="form-control" placeholder="***********">
+        </div>
+
+    </form>
+
+    <button type="button" id="loginBtn" class="btn btn-dark" (click)="loginClick()">Login</button>
+    <hr>
+    <div class="container linkContainer">
+        <a href="#">Forgot password? Click here</a>
+    </div>
+
+</div>

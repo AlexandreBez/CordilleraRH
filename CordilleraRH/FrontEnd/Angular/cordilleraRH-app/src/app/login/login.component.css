@@ -1,0 +1,54 @@
+#containerForm{
+    margin-top: 5%;
+}
+
+.formulary{
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 6px;
+    width: 30%;
+}
+
+img{
+    margin-left: 23%;
+    width: 55%;
+}
+
+button{
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: 35%;
+}
+
+.linkContainer{
+    margin-bottom: 5%;
+}
+
+a{
+    margin-left: 22%;
+    margin-bottom: 5%;
+}
+
+.modalAux {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #333;
+    min-width: 320px;
+    position: fixed;
+    left: 50%;
+    padding: 24px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+}
+  
+.overlay {
+    background: #000;
+    height: 100vh;
+    left: 0;
+    opacity: 0.5;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 10;
+}
