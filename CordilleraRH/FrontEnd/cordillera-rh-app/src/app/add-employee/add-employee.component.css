@@ -1,0 +1,27 @@
+.container{
+    background-color: rgba(255, 255, 255, 0.637);
+    height: 75%;
+    width: 80%;
+}
+
+.form-check{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.btn-success{
+    margin-left: 23%;
+}
+
+.btn-primary{
+    margin-left: 10%;
+    width: 23%;
+}
+
+p{
+    color: red;
+}
+
+.alert{
+    margin-bottom: 2%;
+}

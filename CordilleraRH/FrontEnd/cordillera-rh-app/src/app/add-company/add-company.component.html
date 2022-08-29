@@ -1,0 +1,204 @@
+<div class="container">
+
+    <div *ngIf="createSuccess" class="alert alert-success" role="alert">
+        <i class="bi bi-cloud-check"></i>
+        Company created with success....
+    </div>
+
+    <div class="row mb-2">
+
+        <!-- Company Name -->
+        <div class="form-floating mb-2 col">
+            <input type="text" class="form-control" id="floatingInput" placeholder="a" #companyNameInput>
+            <label for="floatingInput">
+                <i class="bi bi-building"></i>
+                Company Name
+            </label>
+            <p *ngIf="companyError">Value can't be empty...</p>
+        </div>
+
+        <!-- ID Type -->
+        <div class="form-floating col">
+
+            <select class="form-select" id="floatingSelect" aria-label="Floating label select example" #idTypeSelect>
+                <option value="default" selected>Select the type....</option>
+                <option value="CNPJ">CNPJ</option>
+                <option value="EIN/TAX ID">EIN/TAX ID</option>
+                <option value="BN">BN</option>
+                <option value="NIF">NIF</option>
+                <option value="RFC">RFC</option>
+                <option value="Other">Other</option>
+            </select>
+            <label for="floatingSelect">
+                <i class="bi bi-clipboard-data"></i>
+                Id Type
+            </label>
+            <p *ngIf="idTypeError">Please select one type...</p>
+        </div>
+
+        <!-- Company Id -->
+        <div class="form-floating col">
+            <input type="text" class="form-control" id="floatingInput" placeholder="a" #idCompanyInput>
+            <label for="floatingInput">
+                <i class="bi bi-postcard"></i>
+                Company Id
+            </label>
+            <p *ngIf="companyIdError">Value can't be empty...</p>
+        </div>
+
+    </div>
+
+    <div class="row mb-2">
+
+        <!-- Entrance date -->
+        <div class="form-floating col">
+            <input type="date" class="form-control" id="floatingInput" placeholder="a" #entranceSelect>
+            <label for="floatingInput">
+                <i class="bi bi-calendar-week"></i>
+                Entrance Date
+            </label>
+            <p *ngIf="entranceError">Value can't be empty...</p>
+        </div>
+
+        <!-- Cellphone -->
+        <div class="form-floating col">
+            <input type="tel" class="form-control" id="floatingInput" placeholder="a" #cellphoneInput>
+            <label for="floatingInput">
+                <i class="bi bi-phone"></i>
+                Cellphone
+            </label>
+            <p *ngIf="cellphoneError">Value can't be empty...</p>
+        </div>
+
+        <!-- Email -->
+        <div class="form-floating col">
+            <input type="email" class="form-control" id="floatingInput" placeholder="a" #emailInput>
+            <label for="floatingInput">
+                <i class="bi bi-envelope"></i>
+                Email
+            </label>
+            <p *ngIf="emailError">Value can't be empty...</p>
+        </div>
+
+    </div>
+
+    <div class="row mb-2">
+
+        <!-- Country -->
+        <div class="form-floating col">
+
+            <select class="form-select" id="floatingSelect" aria-label="Floating label select example" #countrySelected>
+                <option value="default" selected>Select the country....</option>
+                <option value="{{ countrys }}" *ngFor="let countrys of country">{{ countrys }}</option>
+            </select>
+            <label for="floatingSelect">
+                <i class="bi bi-flag"></i>
+                Country
+            </label>
+            <p *ngIf="countryError">Please select one country...</p>
+        </div>
+
+        <!-- State -->
+        <div class="form-floating col">
+            <input type="text" class="form-control" id="floatingInput" placeholder="a" #stateInput>
+            <label for="floatingInput">
+                <i class="bi bi-compass"></i>
+                State
+            </label>
+            <p *ngIf="stateError">Value can't be empty...</p>
+        </div>
+
+        <!-- City -->
+        <div class="form-floating col">
+            <input type="text" class="form-control" id="floatingInput" placeholder="a" #cityInput>
+            <label for="floatingInput">
+                <i class="bi bi-geo-alt"></i>
+                City
+            </label>
+            <p *ngIf="cityError">Value can't be empty...</p>
+        </div>
+
+    </div>
+
+    <div class="row mb-2">
+
+        <!-- Street -->
+        <div class="form-floating col">
+            <input type="text" class="form-control" id="floatingInput" placeholder="a" #streetInput>
+            <label for="floatingInput">
+                <i class="bi bi-map"></i>
+                Street
+            </label>
+            <p *ngIf="streetError">Value can't be empty...</p>
+        </div>
+
+        <!-- Number/complement -->
+        <div class="form-floating col">
+            <input type="text" class="form-control" id="floatingInput" placeholder="a" #numberInput>
+            <label for="floatingInput">
+                <i class="bi bi-123"></i>
+                Number/Complement
+            </label>
+            <p *ngIf="numberError">Value can't be empty...</p>
+        </div>
+
+        <!-- Zip Code -->
+        <div class="form-floating col">
+            <input type="text" class="form-control" id="floatingInput" placeholder="a" #zipCodeInput>
+            <label for="floatingInput">
+                <i class="bi bi-signpost-split"></i>
+                Zip Code
+            </label>
+            <p *ngIf="zipCodeError">Value can't be empty...</p>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <!-- Files -->
+        <div class="col">
+            <label for="floatingInput">
+                <i class="bi bi-file-earmark-pdf"></i>
+                Documents
+            </label>
+            <input class="form-control" type="file" id="formFileMultiple" accept="application/pdf" multiple>
+        </div>
+        
+    </div>
+
+    <!-- Accept terms -->
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked required>
+        <label class="form-check-label" for="flexSwitchCheckChecked">
+            Accept the Terms and Contract
+        </label>
+    </div>
+
+    <button class="btn btn-success" (click)="onCreateCompany(
+            companyNameInput, 
+            idTypeSelect, 
+            idCompanyInput,
+
+            entranceSelect,
+            cellphoneInput,
+            emailInput,
+
+            countrySelected, 
+            stateInput,
+            cityInput, 
+            
+            streetInput,
+            numberInput, 
+            zipCodeInput
+        )">
+        <i class="bi bi-cloud-plus"></i>
+        Create company
+    </button>
+
+    <button class="btn btn-primary" (click)="onCancelCompany()" type="reset">
+        <i class="bi bi-cloud-slash"></i>
+        Cancel
+    </button>
+
+</div>

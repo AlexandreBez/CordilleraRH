@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/auth.service';
 
 @Component({
   selector: 'app-login-form',
@@ -8,16 +9,28 @@ import { Router } from '@angular/router';
 })
 export class LoginFormComponent implements OnInit {
 
+  email!: string;
+  password!: string;
 
-
-  constructor(
-    private router: Router
-  ) { }
-
-  ngOnInit(): void {
+  ngOnInit(){
+    
   }
 
+  constructor(
+    private router: Router,
+    private token: AuthService
+  ) {}
+
   onLoginClicked(){
-    this.router.navigate(['']);
+
+    if(this.email === 'admin@cordilleraRH.com' && this.password === 'admin123'){
+      this.router.navigate(["/"]);
+      this.token.token = true;
+    }else{
+      this.email = "";
+      this.password = "";
+      alert("Email and/or password wrong....")
+    };
+
   }
 }

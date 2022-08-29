@@ -8,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   person = {
-    name: "John Doe"
+    name: "John Mark Willian Doe"
   };
 
-  timeNow: string = new Intl.DateTimeFormat('en-GB').format();
+  timeNow: string = new Intl.DateTimeFormat('pt-BR').format();
 
   constructor() { }
 

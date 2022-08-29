@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class RecoverPasswordComponent implements OnInit {
 
   showMessage: boolean = false;
+  error: boolean = false;
 
   constructor(
     private router: Router
@@ -17,12 +18,32 @@ export class RecoverPasswordComponent implements OnInit {
   ngOnInit() {
   }
 
-  onRecoverPassword(){
-    this.showMessage = true;
-    setTimeout(
-      () => {
-        this.router.navigate(['login']);
-      }, 6000
-    )
+  // If email input is empty then show error if not then send to login page
+  onRecoverPassword(emailRecover: string){
+
+    if (emailRecover === "") {
+      this.error = true;
+
+      setTimeout(
+        () => {
+          this.error = false;
+        }, 4000
+      )
+    }else{
+
+      this.showMessage = true;
+
+      setTimeout(
+        () => {
+          this.router.navigate(['login']);
+        }, 6000
+
+      )
+    }
+
+  }
+
+  onCancelRecover(){
+    this.router.navigate(['/login']);
   }
 }
