@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CompanyService } from '../Company.service';
 
 @Component({
   selector: 'app-manage-company',
@@ -6,15 +7,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./manage-company.component.css'],
 })
 export class ManageCompanyComponent implements OnInit {
-  companys = [
-    {
-      id: 1,
-      name: 'My company',
-      country: 'Portugal',
-    },
-  ];
+  companys: any;
+  saveIdForDelete!: number;
+  successAlert: boolean = false;
 
-  constructor() {}
+  constructor(
+    private companyService: CompanyService
+  ){}
 
-  ngOnInit(): void {}
+  ngOnInit(){
+    this.companys = this.companyService.getCompanys();
+  }
+
+  deleteConfirmed(){
+    this.companyService.deleteCompany(this.saveIdForDelete);
+    this.successAlert = true;
+    setTimeout(
+      () => {
+        this.successAlert = false;
+      }, 2000
+    )
+  }
+
+  getIdDelete(id: number){
+    return this.saveIdForDelete = id;
+  }
+  
 }
