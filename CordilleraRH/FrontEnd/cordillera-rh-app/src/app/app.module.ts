@@ -7,7 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { LoginFormComponent } from './login/login-form/login-form.component';
 import { RecoverPasswordComponent } from './login/recover-password/recover-password.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddCompanyComponent } from './add-company/add-company.component';
 import { ManageCompanyComponent } from './manage-company/manage-company.component';
 import { LocalizationService } from './Localization.service';
@@ -35,7 +35,7 @@ import { EmployeeService } from './Employee.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    
   ],
   providers: [LocalizationService, CompanyService, EmployeeService],
   bootstrap: [AppComponent]
