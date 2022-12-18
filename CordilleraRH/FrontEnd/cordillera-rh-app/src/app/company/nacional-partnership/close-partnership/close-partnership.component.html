@@ -1,0 +1,62 @@
+<div [hidden]="!showTerminationPartnership">
+    <div class="modalAux">
+
+        <div [hidden]="!isTerminatedSuccefully" class="alert alert-success" role="alert">
+            <i class="bi bi-check-circle"></i>
+            Successfully Terminated 
+        </div>
+
+        <div [hidden]="!isTerminatedFailed" class="alert alert-danger" role="alert">
+            <i class="bi bi-exclamation-circle"></i>
+            An error occured...Please try again later or call the IT team
+        </div>
+
+        <app-spinner [hidden]="!isLoading"></app-spinner>
+
+        <form #submitFilesTermination="ngForm" (ngSubmit)="onSubmitTerminationFilesSupplier()" role="search">
+
+            <div class="col">
+                <div class="form-floating">
+                    <textarea disabled class="form-control" id="floatingTextarea2" style="width: 400px; height: 200px;">
+                        LOREM IPSUM
+                        
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas corporis qui omnis provident consequuntur voluptate tempora vitae ipsam velit dolor sapiente aut neque, praesentium voluptatum beatae rem explicabo maiores a?
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat rem adipisci, alias nulla blanditiis ea eveniet? Expedita iusto in asperiores explicabo maxime labore unde fugiat non similique quae, eaque ad!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat rem adipisci, alias nulla blanditiis ea eveniet? Expedita iusto in asperiores explicabo maxime labore unde fugiat non similique quae, eaque ad!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat rem adipisci, alias nulla blanditiis ea eveniet? Expedita iusto in asperiores explicabo maxime labore unde fugiat non similique quae, eaque ad!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat rem adipisci, alias nulla blanditiis ea eveniet? Expedita iusto in asperiores explicabo maxime labore unde fugiat non similique quae, eaque ad!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat rem adipisci, alias nulla blanditiis ea eveniet? Expedita iusto in asperiores explicabo maxime labore unde fugiat non similique quae, eaque ad!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat rem adipisci, alias nulla blanditiis ea eveniet? Expedita iusto in asperiores explicabo maxime labore unde fugiat non similique quae, eaque ad!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat rem adipisci, alias nulla blanditiis ea eveniet? Expedita iusto in asperiores explicabo maxime labore unde fugiat non similique quae, eaque ad!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat rem adipisci, alias nulla blanditiis ea eveniet? Expedita iusto in asperiores explicabo maxime labore unde fugiat non similique quae, eaque ad!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat rem adipisci, alias nulla blanditiis ea eveniet? Expedita iusto in asperiores explicabo maxime labore unde fugiat non similique quae, eaque ad!
+                    </textarea>
+                </div>
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label">
+                    <i class="bi bi-file-earmark-pdf"></i>
+                    Termination Files
+                </label>
+                <input class="form-control" type="file" multiple accept="application/pdf" required ngModel name="termination_file">
+            </div>
+
+            <div class="mb-3 form-check">
+                <input required ngModel name="termParnership" type="checkbox" class="form-check-input">
+                <label class="form-check-label">Company and Partner agree with the terms</label>
+            </div>
+
+            <button [disabled]="!submitFilesTermination.valid" class="btn btn-warning ms-5 me-3" type="submit">
+                <i class="bi bi-file-earmark-minus"></i>
+                Terminate Partnership
+            </button>
+            <button class="btn btn-dark" (click)="onCancelTerminationFilesSupplier()">
+                <i class="bi bi-x"></i>
+                Cancel
+            </button>
+        </form>
+    </div>
+    <div class="overlay">
+    </div>
+</div>

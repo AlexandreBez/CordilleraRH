@@ -1,0 +1,13 @@
+.container-fluid{
+    background-color: rgba(255, 255, 255, 0.658);
+    border-radius: 10px;
+}
+
+textarea, .descriptionLabel{
+    width: 80%;
+    margin-left: 10%;
+}
+
+.btn-primary{
+    margin-left: 22%;
+}

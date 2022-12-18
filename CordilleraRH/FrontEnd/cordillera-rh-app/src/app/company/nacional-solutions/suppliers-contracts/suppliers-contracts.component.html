@@ -1,0 +1,96 @@
+<app-suppliers-details [showSupplierDetails]="showSupplierDetails"></app-suppliers-details>
+<app-renew [showRenew]="showRenew"></app-renew>
+<app-edit [showEdit]="showEdit"></app-edit>
+<app-end-contract [showTerminationSuppliers]="showTerminationSuppliers"></app-end-contract>
+<app-remove [showDeleteRecord]="showDeleteRecord"></app-remove>
+<app-new-supplier [showNewSupplier]="showNewSupplier"></app-new-supplier>
+<div class="d-flex justify-content-center">
+
+    <div class="form-floating mb-3">
+        <input type="text" list="datalistOptions" class="form-control" id="floatingInput"
+            placeholder="name@example.com">
+        <label for="floatingInput">
+            <i class="bi bi-building"></i>
+            Company name
+        </label>
+
+        <datalist id="datalistOptions">
+            <option value="San Francisco">
+            <option value="New York">
+            <option value="Seattle">
+            <option value="Los Angeles">
+            <option value="Chicago">
+        </datalist>
+
+    </div>
+
+    <div class="ms-2 mt-2">
+        <button class="ps-4 pe-4 btn btn-outline-success">
+            <i class="bi bi-search"></i>
+        </button>
+    </div>
+
+</div>
+
+<h5>Company selected: <em>Infratech LTDA.</em> </h5>
+
+<button class="btn btn-success mb-2" (click)="onShowNewSupplier()">
+    <i class="bi bi-plus-circle-dotted"></i>
+    Add new Supplier or Service
+</button>
+
+<table class="table">
+    <thead class="table-dark text-center">
+        <tr>
+            <th scope="col">
+                <i class="bi bi-truck"></i>
+                Supplier or Service
+            </th>
+            <th scope="col">
+                <i class="bi bi-arrow-clockwise"></i>
+                Renew
+            </th>
+            <th scope="col">
+                <i class="bi bi-pencil-square"></i>
+                Edit
+            </th>
+            <th scope="col">
+                <i class="bi bi-bag-x"></i>
+                Terminate Contract
+            </th>
+            <th scope="col">
+                <i class="bi bi-trash"></i>
+                Delete
+            </th>
+        </tr>
+    </thead>
+    <tbody class="text-center">
+        <tr>
+            <td>
+                <a role="button" style="color: blue; text-decoration: underline;" (click)="onShowDetails()">
+                    Infratech
+                </a>
+            </td>
+            <td>
+                <button class="btn btn-info" (click)="onShowRenew()">
+                    <i class="bi bi-arrow-clockwise"></i>
+                </button>
+            </td>
+            <td>
+                <button class="btn btn-primary" (click)="onShowEdit()">
+                    <i class="bi bi-pencil-square"></i>
+                </button>
+            </td>
+            <td>
+                <button class="btn btn-warning" (click)="onShowTerminationSuppliers()">
+                    <i class="bi bi-bag-x"></i>
+                </button>
+            </td>
+            <td>
+                <button class="btn btn-danger" (click)="onShowDeleteRecord()">
+                    <i class="bi bi-trash"></i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

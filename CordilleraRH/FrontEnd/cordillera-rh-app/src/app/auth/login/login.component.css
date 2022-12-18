@@ -1,0 +1,14 @@
+.formHelper{
+    background-color: rgba(0, 0, 0, 0.445);
+    margin-top: 10%;
+    margin-left: 35%;
+    padding: 7%;
+}
+
+.loginHelper{
+    margin-left: 38%;
+}
+
+.recoverHelper{
+    margin-left: 27%;
+}

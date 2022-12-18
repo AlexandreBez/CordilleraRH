@@ -1,0 +1,104 @@
+<app-edit-employee [showUpdate]="showUpdate"></app-edit-employee>
+<app-full-detail-employee [showDetails]="showDetails"></app-full-detail-employee>
+<app-remove [showDeleteRecord]="showDeleteRecord"></app-remove>
+
+<div class="container">
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid justify-content-center">
+
+            <form #searchEmployee="ngForm" (ngSubmit)="onSearchEmployee()" class="d-flex" role="search">
+
+                <div class="form-floating me-2">
+
+                    <input class="form-control" type="search" placeholder="Type the employee" aria-label="Search"
+                        ngModel required name="employeeName">
+                    <label for="floatingInput">
+                        <i class="bi bi-person-badge"></i>
+                        Employee Name
+                    </label>
+                </div>
+
+                <div class="form-floating">
+
+                    <input class="form-control" type="search" placeholder="Type the company" aria-label="Search"
+                        ngModel name="document_number">
+                    <label for="floatingInput">
+                        <i class="bi bi-postcard"></i>
+                        Document Number
+                    </label>
+                </div>
+
+
+                <div class="ms-2 mt-2">
+                    <button [disabled]="!searchEmployee.valid" class="ps-4 pe-4 btn btn-outline-success" type="submit">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </nav>
+
+    <table class="table">
+        <thead class="table-dark text-center">
+            <tr>
+                <th scope="col">
+                    <i class="bi bi-person-badge"></i>
+                    Employee
+                </th>
+                <th scope="col">
+                    <i class="bi bi-postcard"></i>
+                    Document Number
+                </th>
+                <th scope="col">
+                    <i class="bi bi-flag"></i>
+                    Country
+                </th>
+                <th scope="col">
+                    <i class="bi bi-building"></i>
+                    Company
+                </th>
+                <th scope="col">
+                    <i class="bi bi-pencil-square"></i>
+                    Update
+                </th>
+                <th scope="col">
+                    <i class="bi bi-trash"></i>
+                    Remove
+                </th>
+            </tr>
+        </thead>
+        <tbody class="text-center text-wrap">
+            <tr>
+                <th id="employee_name">
+                    <a role="button" style="color: blue; text-decoration: underline;" (click)="onShowDetails()">
+                        Jhon Doe
+                    </a>
+                </th>
+                <td>
+                    025487956321
+                </td>
+                <td>
+                    United Kingdom
+                </td>
+                <td>
+                    Microsoft
+                </td>
+                <td>
+                    <button class="btn btn-primary" (click)="onShowUpdate()">
+                        <i class="bi bi-pencil-square"></i>
+                    </button>
+                </td>
+                <td>
+                    <button class="btn btn-danger" (click)="onShowDeleteRecord()">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+
+</div>

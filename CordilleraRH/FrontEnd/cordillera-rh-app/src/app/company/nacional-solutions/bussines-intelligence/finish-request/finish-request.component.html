@@ -1,0 +1,52 @@
+<div [hidden]="!showFinishRequest">
+    <div class="modalAux">
+
+        <div [hidden]="!isFinishedSuccefully" class="alert alert-success" role="alert">
+            <i class="bi bi-check-circle"></i>
+            Successfully Finished
+        </div>
+
+        <div [hidden]="!isFinishedFailed" class="alert alert-danger" role="alert">
+            <i class="bi bi-exclamation-circle"></i>
+            An error occured...Please try again later or call the IT team
+        </div>
+
+        <app-spinner [hidden]="!isLoading"></app-spinner>
+
+
+        <form (ngSubmit)="onFinishRequest()" #finishRequestForm="ngForm">
+
+            <div class="col mt-2 mb-2">
+                <label for="formFile" class="form-label">
+                    <i class="bi bi-file-earmark-pdf"></i>
+                    Receipt Files
+                </label>
+                <input required ngModel name="bi_receipt_files" class="form-control" multiple accept="application/pdf"
+                    type="file" id="formFile"
+                >
+            </div>
+
+            <div class="row mb-2">
+                <div class="form-floating col">
+                    <input type="date" required ngModel name="delivered_date" class="form-control" placeholder="0">
+                    <label>
+                        <i class="bi bi-calendar-week"></i>
+                        Delivered Date
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit" [disabled]="!finishRequestForm.valid" class="btn btn-success">
+                <i class="bi bi-check-circle"></i>
+                Finish Request
+            </button>
+
+            <button class="btn btn-dark" (click)="onCancelFinishRequest()">
+                <i class="bi bi-x"></i>
+                Cancel
+            </button>
+        </form>
+    </div>
+    <div class="overlay">
+    </div>
+</div>

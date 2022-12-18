@@ -1,0 +1,49 @@
+<div [hidden]="!showTerminationDetails">
+    <div class="modalAux">
+        <form #submitFilesTermination="ngForm" (ngSubmit)="onSubmitTerminationFilesCompany()" role="search">
+
+            <div class="col">
+                <div class="form-floating">
+                    <textarea disabled class="form-control" id="floatingTextarea2" style="width: 400px; height: 200px;">
+                        LOREM IPSUM
+                        
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas corporis qui omnis provident consequuntur voluptate tempora vitae ipsam velit dolor sapiente aut neque, praesentium voluptatum beatae rem explicabo maiores a?
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat rem adipisci, alias nulla blanditiis ea eveniet? Expedita iusto in asperiores explicabo maxime labore unde fugiat non similique quae, eaque ad!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat rem adipisci, alias nulla blanditiis ea eveniet? Expedita iusto in asperiores explicabo maxime labore unde fugiat non similique quae, eaque ad!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat rem adipisci, alias nulla blanditiis ea eveniet? Expedita iusto in asperiores explicabo maxime labore unde fugiat non similique quae, eaque ad!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat rem adipisci, alias nulla blanditiis ea eveniet? Expedita iusto in asperiores explicabo maxime labore unde fugiat non similique quae, eaque ad!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat rem adipisci, alias nulla blanditiis ea eveniet? Expedita iusto in asperiores explicabo maxime labore unde fugiat non similique quae, eaque ad!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat rem adipisci, alias nulla blanditiis ea eveniet? Expedita iusto in asperiores explicabo maxime labore unde fugiat non similique quae, eaque ad!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat rem adipisci, alias nulla blanditiis ea eveniet? Expedita iusto in asperiores explicabo maxime labore unde fugiat non similique quae, eaque ad!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat rem adipisci, alias nulla blanditiis ea eveniet? Expedita iusto in asperiores explicabo maxime labore unde fugiat non similique quae, eaque ad!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat rem adipisci, alias nulla blanditiis ea eveniet? Expedita iusto in asperiores explicabo maxime labore unde fugiat non similique quae, eaque ad!
+                    </textarea>
+                </div>
+            </div>
+
+            <div class="mb-2">
+                <label for="formFile" class="form-label">
+                    <i class="bi bi-file-earmark-pdf"></i>
+                    Termination Files
+                </label>
+                <input class="form-control" type="file" id="formFile" multiple accept="application/pdf" required ngModel name="termination_file">
+            </div>
+
+            <div class="mb-3 form-check">
+                <input required ngModel name="termContract" type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Client agreed with the terms</label>
+            </div>
+
+            <button [disabled]="!submitFilesTermination.valid" class="btn btn-danger ms-5 me-3" type="submit">
+                <i class="bi bi-device-hdd"></i>
+                Terminate Contract
+            </button>
+            <button class="btn btn-primary" (click)="onCancelTerminationFilesCompany()">
+                <i class="bi bi-x-circle"></i>
+                Cancel
+            </button>
+        </form>
+    </div>
+    <div class="overlay">
+    </div>
+</div>

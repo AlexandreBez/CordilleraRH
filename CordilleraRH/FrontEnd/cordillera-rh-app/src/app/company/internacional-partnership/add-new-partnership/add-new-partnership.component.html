@@ -1,0 +1,107 @@
+<div [hidden]="!showNewPartnership">
+    <div class="modalAux">
+
+        <div [hidden]="!isCreatedNewSupplierSuccefully" class="alert alert-success" role="alert">
+            <i class="bi bi-check-circle"></i>
+            Successfully created
+        </div>
+
+        <div [hidden]="!isCreatedNewSupplierFailed" class="alert alert-danger" role="alert">
+            <i class="bi bi-exclamation-circle"></i>
+            An error occured...Please try again later or call the IT team
+        </div>
+
+        <app-spinner [hidden]="!isLoading"></app-spinner>
+
+        <form (ngSubmit)="onCreateNewSupplier()" #addNewSupplierForm="ngForm">
+
+            <div class="row mb-2">
+                <div class="form-floating col">
+                    <input type="text" required ngModel name="supplier_name" class="form-control" placeholder="some company name...">
+                    <label>
+                        <i class="bi bi-truck"></i>
+                        Company name
+                    </label>
+                </div>
+                <div class="form-floating col">
+                    <input type="text" required ngModel name="supplier_document" class="form-control" placeholder="Document...">
+                    <label>
+                        <i class="bi bi-postcard"></i>
+                        Company Document
+                    </label>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="form-floating col">
+                    <input type="text" required ngModel name="supplier_country" class="form-control" placeholder="some company name...">
+                    <label>
+                        <i class="bi bi-globe"></i>
+                        Country
+                    </label>
+                </div>
+                <div class="form-floating col">
+                    <input type="text" required ngModel name="supplier_state" class="form-control" placeholder="Document...">
+                    <label>
+                        <i class="bi bi-map"></i>
+                        State
+                    </label>
+                </div>
+                <div class="form-floating col">
+                    <input type="text" required ngModel name="supplier_adress" class="form-control" placeholder="Document...">
+                    <label>
+                        <i class="bi bi-geo-alt"></i>
+                        Adress
+                    </label>
+                </div>
+            </div>
+            
+            <div class="row mb-2">
+                <div class="form-floating col">
+                    <input [required]="!untilClientCloseContract" ngModel name="from_data"
+                        [disabled]="untilClientCloseContract" type="date" class="form-control"
+                        id="exampleInputPassword1">
+                    <label for="exampleInputPassword1" class="form-label">
+                        <i class="bi bi-calendar-week"></i>
+                        From
+                    </label>
+                </div>
+                <div class="form-floating col">
+                    <input type="text" required ngModel name="supplier_email" class="form-control" placeholder="some company name...">
+                    <label>
+                        <i class="bi bi-envelope"></i>
+                        Email
+                    </label>
+                </div>
+                <div class="form-floating col">
+                    <input type="text" required ngModel name="supplier_telephone" class="form-control" placeholder="Document...">
+                    <label>
+                        <i class="bi bi-telephone"></i>
+                        Telephone
+                    </label>
+                </div>
+            </div>
+
+            <div class="col mt-2">
+                <label for="formFile" class="form-label">
+                    <i class="bi bi-file-earmark-pdf"></i>
+                    Contract Files
+                </label>
+                <input required ngModel name="supplier_contract_files" class="form-control" multiple accept="application/pdf"
+                    type="file" id="formFile">
+            </div>
+
+
+            <button [disabled]="!addNewSupplierForm.valid" type="submit" class="btn btn-success">
+                <i class="bi bi-device-hdd"></i>
+                Save new Partnership
+            </button>
+            <button class="btn btn-dark" (click)="onCancel()">
+                <i class="bi bi-x"></i>
+                Cancel
+            </button>
+        </form>
+    </div>
+    <div class="overlay">
+    </div>
+</div>

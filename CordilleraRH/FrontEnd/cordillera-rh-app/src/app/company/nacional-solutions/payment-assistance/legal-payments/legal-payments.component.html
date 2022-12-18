@@ -1,0 +1,90 @@
+<app-delete-register [showDeleteRecord]="showDeleteRecord"></app-delete-register>
+<app-bill-receipt [showBillReceiptDetails]="showBillReceiptDetails"></app-bill-receipt>
+<app-new-payment [showNewPaymentRecord]="showNewPaymentRecord"></app-new-payment>
+
+<h3 class="pt-2">
+    <button class="btn btn-dark me-2" (click)="onBackToPaymentAssitance()">
+        <i class="bi bi-arrow-left-circle"></i>
+    </button>
+    <em>Legal Payments</em>
+</h3>
+
+<hr>
+
+<div class="d-flex justify-content-center">
+
+    <div class="form-floating mb-3">
+        <input type="text" list="datalistOptions" class="form-control" id="floatingInput"
+            placeholder="name@example.com">
+        <label for="floatingInput">
+            <i class="bi bi-building"></i>
+            Company name
+        </label>
+
+        <datalist id="datalistOptions">
+            <option value="San Francisco">
+            <option value="New York">
+            <option value="Seattle">
+            <option value="Los Angeles">
+            <option value="Chicago">
+        </datalist>
+
+    </div>
+
+    <div class="ms-2 mt-2">
+        <button class="ps-4 pe-4 btn btn-outline-success">
+            <i class="bi bi-search"></i>
+        </button>
+    </div>
+
+</div>
+
+<h5>Company selected: <em>Infratech LTDA.</em> </h5>
+
+<button class="btn btn-success mb-2" (click)="onShowNewPaymentRecord()">
+    <i class="bi bi-plus-circle-dotted"></i>
+    New Payment
+</button>
+
+<table class="table">
+    <thead class="table-dark text-center">
+        <tr>
+            <th scope="col">
+                <i class="bi bi-calendar-week"></i>
+                Date
+            </th>
+            <th scope="col">
+                <i class="bi bi-receipt"></i>
+                Service
+            </th>
+            <th scope="col">
+                <i class="bi bi-cash"></i>
+                Amount
+            </th>
+            <th scope="col">
+                <i class="bi bi-trash"></i>
+                Delete
+            </th>
+        </tr>
+    </thead>
+    <tbody class="text-center">
+        <tr>
+            <td>
+                25/04/2020
+            </td>
+            <td>
+                <a role="button" style="color: blue; text-decoration: underline;" (click)="onShowReceipt()">
+                    Advocacy Union
+                </a>
+            </td>
+            <td>
+                $5000,00
+            </td>
+            <td>
+                <button class="btn btn-danger" (click)="onShowDeleteRecord()">
+                    <i class="bi bi-trash"></i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

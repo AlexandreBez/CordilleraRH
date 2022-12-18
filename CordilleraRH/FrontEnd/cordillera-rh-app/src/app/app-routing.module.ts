@@ -1,57 +1,17 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddCompanyComponent } from './add-company/add-company.component';
-import { AddEmployeeComponent } from './add-employee/add-employee.component';
-import { HomeComponent } from './home/home.component';
-import { LoginFormComponent } from './login/login-form/login-form.component';
-import { LoginComponent } from './login/login.component';
-import { RecoverPasswordComponent } from './login/recover-password/recover-password.component';
-import { ManageCompanyComponent } from './manage-company/manage-company.component';
-import { ManageEmployeeComponent } from './manage-employee/manage-employee.component';
 
 const routes: Routes = [
-  {
-    path: 'login',
-    component: LoginComponent,
-    children: [
-
-      {
-        path: '',
-        component: LoginFormComponent
-      },
-
-      {
-        path: 'recover',
-        component: RecoverPasswordComponent
-      }
-
-    ]
-  },
-
-  {
-    path: '',
-    component: HomeComponent
-  },
-
-  {
-    path: 'add-company',
-    component: AddCompanyComponent
-  },
-
-  {
-    path: 'manage-company',
-    component: ManageCompanyComponent,
-  },
-  
-  {
-    path: 'add-employee',
-    component: AddEmployeeComponent
-  },
-
-  {
-    path:'manage-employees',
-    component: ManageEmployeeComponent
-  }
+  { path: '', redirectTo: 'Login', pathMatch: 'full' },
+  { path: 'Search', loadChildren: () => import('./company/search/search-company.module').then(m => m.SearchCompanyModule) },
+  { path: 'NewNacionalContract', loadChildren: () => import('./company/new-nacional-contract/new-nacional-contract.module').then(m => m.NewNacionalContracModule) },
+  { path: 'NewInternacionalContract', loadChildren: () => import('./company/new-internacional-contrac/new-international-contract.module').then(m => m.NewInternacionalContracModule) },
+  { path: '', loadChildren: () => import('./company/nacional-solutions/nacional-solutions.module').then(m => m.NacionalSolutionsModule) },
+  { path: '', loadChildren: () => import('./company/internacional-solutions/internacional-solutions.module').then(m => m.InternacionalSolutionsModule) },
+  { path: '', loadChildren: () => import('./company/nacional-internacional-solutions/nacional-internacional.module').then(m => m.NacionalInternacionalSolutionsModule) },
+  { path: '', loadChildren: () => import('./company/nacional-partnership/nacional-partnership.module').then(m => m.NacionalSolutionsModule) },
+  { path: '', loadChildren: () => import('./company/internacional-partnership/internacional-partnership.module').then(m => m.InternacionalSolutionsModule) },
+  { path: '', loadChildren: () => import('./company/nacional-internacional-partnership/nacional-internacional-partnership.module').then(m => m.InternacionalSolutionsModule) },
 ];
 
 @NgModule({

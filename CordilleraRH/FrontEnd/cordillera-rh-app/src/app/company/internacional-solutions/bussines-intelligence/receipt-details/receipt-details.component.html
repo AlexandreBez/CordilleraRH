@@ -1,0 +1,47 @@
+<div [hidden]="!showBIRequest">
+    <div class="modalAux">
+
+
+        <div [hidden]="!isDownloadedSuccefully" class="alert alert-success" role="alert">
+            <i class="bi bi-check-circle"></i>
+            Successfully Downloaded
+        </div>
+
+        <div [hidden]="!isDownloadedFailed" class="alert alert-danger" role="alert">
+            <i class="bi bi-exclamation-circle"></i>
+            An error occured...Please try again later or call the IT team
+        </div>
+
+        <app-spinner [hidden]="!isLoading"></app-spinner>
+
+        <button (click)="onCloseBillDetails()" type="button" class="btn-close" aria-label="Close"></button>
+        <div data-bs-spy="scroll" data-bs-root-margin="0px 0px -20%" data-bs-smooth-scroll="true" class="scrollspy-example bg-light p-3 rounded-2" tabindex="0">
+            <hr>
+            <ul>
+                <li>
+                    <i class="bi bi-calendar-week"></i>
+                    Request Date: 02/02/2022
+                </li>
+                <li>
+                    <i class="bi bi-box-seam"></i>
+                    Delivered?: Delivered
+                </li>
+                <li>
+                    <i class="bi bi-calendar-week"></i>
+                    Delivered Date: 02/05/2022
+                </li>
+                <li>
+                    <i class="bi bi-cash"></i>
+                    Amount: $6000,00
+                </li>
+            </ul>
+
+            <button class="btn btn-info ms-5" (click)="downloadReceipAndFiles()">
+                <i class="bi bi-cloud-download"></i>
+                Download Files
+            </button>
+        </div>
+    </div>
+    <div class="overlay">
+    </div>
+</div>

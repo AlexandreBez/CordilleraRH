@@ -5,11 +5,7 @@
   "projects": {
     "cordillera-rh-app": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:application": {
-          "strict": true
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -27,14 +23,10 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.css",
-              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css"
             ],
-            "scripts": [
-              "node_modules/@popperjs/core/dist/umd/popper.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -107,5 +99,7 @@
       }
     }
   },
-  "defaultProject": "cordillera-rh-app"
+  "cli": {
+    "analytics": "0533cb27-f5e5-40e2-8a38-82f123c6db99"
+  }
 }

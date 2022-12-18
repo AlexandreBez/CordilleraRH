@@ -1,0 +1,54 @@
+<div [hidden]="!showBillReceiptDetails">
+    <div class="modalAux">
+
+
+        <div [hidden]="!isDownloadedSuccefully" class="alert alert-success" role="alert">
+            <i class="bi bi-check-circle"></i>
+            Successfully Downloaded
+        </div>
+
+        <div [hidden]="!isDownloadedFailed" class="alert alert-danger" role="alert">
+            <i class="bi bi-exclamation-circle"></i>
+            An error occured...Please try again later or call the IT team
+        </div>
+
+        <button (click)="onCloseBillDetails()" type="button" class="btn-close" aria-label="Close"></button>
+        <div data-bs-spy="scroll" data-bs-root-margin="0px 0px -20%" data-bs-smooth-scroll="true" class="scrollspy-example bg-light p-3 rounded-2" tabindex="0">
+            <h3 class="mt-1">
+                <span class="badge bg-primary">
+                    Service: <em>Advocacy Union</em>
+                </span>
+            </h3>
+            <hr>
+            <ul>
+                <li>
+                    <i class="bi bi-postcard"></i>
+                    Company Id: 456987654123
+                </li>
+                <li>
+                    <i class="bi bi-calendar-week"></i>
+                    Due date: 25/04/2020
+                </li>
+                <li>
+                    <i class="bi bi-calendar-week"></i>
+                    Paid out: 25/04/2020
+                </li>
+                <li>
+                    <i class="bi bi-cash"></i>
+                    Amount: $5000,00
+                </li>
+                <li>
+                    <i class="bi bi-telephone"></i>
+                    +55 48 900223344
+                </li>
+            </ul>
+
+            <button class="btn btn-info ms-5" (click)="downloadReceipAndFiles()">
+                <i class="bi bi-cloud-download"></i>
+                Download Receipt
+            </button>
+        </div>
+    </div>
+    <div class="overlay">
+    </div>
+</div>

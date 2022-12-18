@@ -1,13 +1,15 @@
 .container{
-    background-color: rgba(255, 255, 255, 0.637);
-    height: 73%;
+    margin-left: 32%;
+    margin-top: 5%;
+    width: 40%;
+    background-color: rgba(255, 255, 255, 0.377);
+    border-radius: 20px;
 }
 
 h3{
-    text-decoration: underline;
-    
+    margin-left: 10%;
 }
 
 img{
-    margin-left: 17%;
+    margin-left: 10%;
 }

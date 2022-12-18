@@ -1,0 +1,57 @@
+<div [hidden]="!showRenew">
+    <div class="modalAux">
+        <div [hidden]="!isRenovatedSuccefully" class="alert alert-success" role="alert">
+            <i class="bi bi-check-circle"></i>
+            Successfully renovated 
+        </div>
+
+        <div [hidden]="!isRenovatedFailed" class="alert alert-danger" role="alert">
+            <i class="bi bi-exclamation-circle"></i>
+            An error occured...Please try again later or call the IT team
+        </div>
+
+        <app-spinner [hidden]="!isLoading"></app-spinner>
+
+        <form (ngSubmit)="onRenew()" #renewForm="ngForm">
+            <div class="mb-3">
+                <label for="formFile" class="form-label">
+                    <i class="bi bi-file-earmark-pdf"></i>
+                    Renew Files
+                </label>
+                <input required ngModel name="renew_files" class="form-control" multiple accept="application/pdf" type="file" id="formFile">
+            </div>
+            <div class="form-floating mb-3">
+                <input [required]="untilClientCloseContract" ngModel name="from_data" [disabled]="untilClientCloseContract" type="date" class="form-control" id="exampleInputPassword1">
+                <label for="exampleInputPassword1" class="form-label">
+                    <i class="bi bi-calendar-week"></i>
+                    From
+                </label>
+            </div>
+            <div class="form-floating mb-3">
+                <input [required]="untilClientCloseContract" ngModel name="until_data" [disabled]="untilClientCloseContract" type="date" class="form-control" id="exampleInputPassword1">
+                <label for="exampleInputPassword1" class="form-label">
+                    <i class="bi bi-calendar-week"></i>
+                    Until
+                </label>
+              </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" (click)="onUntilClientCloseContract()" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Until the client end the contract</label>
+            </div>
+            <div class="mb-3 form-check">
+                <input ngModel name="service_terms" type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Company and customer accept terms of service</label>
+            </div>
+            <button [disabled]="!renewForm.valid" type="submit" class="btn btn-info" >
+                <i class="bi bi-arrow-clockwise"></i>
+                Renew
+            </button>
+            <button class="btn btn-dark" (click)="onCancel()">
+                <i class="bi bi-x"></i>
+                Cancel
+            </button>
+        </form>
+    </div>
+    <div class="overlay">
+    </div>
+</div>

@@ -1,0 +1,91 @@
+<div [hidden]="!showNewPaymentRecord">
+    <div class="modalAux">
+
+        <div [hidden]="!isCreatedSuccefully" class="alert alert-success" role="alert">
+            <i class="bi bi-check-circle"></i>
+            Successfully Created 
+        </div>
+
+        <div [hidden]="!isCreatedFailed" class="alert alert-danger" role="alert">
+            <i class="bi bi-exclamation-circle"></i>
+            An error occured...Please try again later or call the IT team
+        </div>
+
+        <app-spinner [hidden]="!isLoading"></app-spinner>
+
+        <form (ngSubmit)="onCreateNewPayment()" #addNewPaymentForm="ngForm">
+
+            <div class="row mb-2">
+                <div class="form-floating col">
+                    <input type="text" required ngModel name="service" class="form-control" placeholder="some company name...">
+                    <label>
+                        <i class="bi bi-receipt"></i>
+                        Service
+                    </label>
+                </div>
+                <div class="form-floating col">
+                    <input type="text" required ngModel name="company_id" class="form-control" placeholder="Document...">
+                    <label>
+                        <i class="bi bi-postcard"></i>
+                        Company Id
+                    </label>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="form-floating col">
+                    <input type="date" required ngModel name="due_date" class="form-control" placeholder="date">
+                    <label>
+                        <i class="bi bi-calendar-week"></i>
+                        Due Date
+                    </label>
+                </div>
+                <div class="form-floating col">
+                    <input type="date" required ngModel name="paid_out" class="form-control" placeholder="date">
+                    <label>
+                        <i class="bi bi-calendar-week"></i>
+                        Paid Out
+                    </label>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="form-floating col">
+                    <input type="number" min="0" required ngModel name="amount" class="form-control" placeholder="0">
+                    <label>
+                        <i class="bi bi-cash"></i>
+                        Amount
+                    </label>
+                </div>
+                <div class="form-floating col">
+                    <input type="text" required ngModel name="company_telephone" class="form-control" placeholder="telephone...">
+                    <label>
+                        <i class="bi bi-telephone"></i>
+                        Telephone
+                    </label>
+                </div>
+            </div>
+
+            <div class="col mt-2 mb-2">
+                <label for="formFile" class="form-label">
+                    <i class="bi bi-file-earmark-pdf"></i>
+                    Receipt Files
+                </label>
+                <input required ngModel name="receipt_files" class="form-control" multiple accept="application/pdf"
+                    type="file" id="formFile">
+            </div>
+
+
+            <button [disabled]="!addNewPaymentForm.valid" type="submit" class="btn btn-success" (click)="onCreateNewPayment()">
+                <i class="bi bi-device-hdd"></i>
+                Save new payment
+            </button>
+            <button class="btn btn-dark" (click)="onCancel()">
+                <i class="bi bi-x"></i>
+                Cancel
+            </button>
+        </form>
+    </div>
+    <div class="overlay">
+    </div>
+</div>

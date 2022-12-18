@@ -1,0 +1,169 @@
+<div [hidden]="!showUpdate">
+    <div class="modalAux">
+        <form (ngSubmit)="onUpdateCompany()" #updateForm="ngForm">
+    
+            <div class="row">
+                <div class="col">
+                    <label for="formFile" class="form-label">
+                        <i class="bi bi-images"></i>
+                        Logo file
+                    </label>
+                    <input 
+                        class="form-control" 
+                        type="file" 
+                        id="formFile"
+                        ngModel
+                        name="logo"
+                    >
+               </div>
+                <div class="col">
+                    <label for="exampleInputPassword1" class="form-label">
+                        <i class="bi bi-building"></i>
+                        Company Name*
+                    </label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="exampleInputPassword1" 
+                        required
+                        ngModel
+                        name="companyName"
+                    >
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col">
+                    <label for="exampleInputPassword1" class="form-label">
+                        <i class="bi bi-globe"></i>
+                        Country*
+                    </label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="exampleInputPassword1" 
+                        required
+                        ngModel
+                        name="country"
+                    >
+                </div>
+                <div class="col">
+                    <label for="exampleInputPassword1" class="form-label">
+                        <i class="bi bi-flag"></i>
+                        State*
+                    </label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="exampleInputPassword1" 
+                        required
+                        ngModel
+                        name="state"
+                    >
+                </div>
+                <div class="col">
+                    <label for="exampleInputPassword1" class="form-label">
+                        <i class="bi bi-geo-alt"></i>
+                        Street*
+                    </label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="exampleInputPassword1"
+                        required
+                        ngModel
+                        name="street"
+                    >
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col">
+                    <label for="exampleInputPassword1" class="form-label">
+                        <i class="bi bi-postcard"></i>
+                        Company Document*
+                    </label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="exampleInputPassword1"
+                        required
+                        ngModel
+                        name="companyDocument"
+                    >
+                </div>
+                <div class="col">
+                    <label for="exampleInputPassword1" class="form-label">
+                        <i class="bi bi-envelope"></i>
+                        Main email*
+                    </label>
+                    <input 
+                        type="email" 
+                        class="form-control" 
+                        id="exampleInputPassword1"
+                        required
+                        ngModel
+                        name="mainEmail"
+                    >
+                </div>
+                <div class="col">
+                    <label for="exampleInputPassword1" class="form-label">
+                        <i class="bi bi-envelope"></i>
+                        Secundary email
+                    </label>
+                    <input 
+                        type="email" 
+                        class="form-control" 
+                        id="exampleInputPassword1"
+                        ngModel
+                        name="secundaryEmail"
+                    >
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col">
+                    <label for="exampleInputPassword1" class="form-label">
+                        <i class="bi bi-telephone"></i>
+                        Main Telephone*
+                    </label>
+                    <input 
+                        type="tel" 
+                        class="form-control" 
+                        id="exampleInputPassword1"
+                        required
+                        ngModel
+                        name="mainTelephone"
+                    >
+                </div>
+                <div class="col">
+                    <label for="exampleInputPassword1" class="form-label">
+                        <i class="bi bi-telephone"></i>
+                        Secundary Telephone
+                    </label>
+                    <input 
+                        type="tel" 
+                        class="form-control" 
+                        id="exampleInputPassword1"
+                        ngModel
+                        name="secundaryTelephone"
+                    >
+                </div>
+            </div>
+    
+            <div class="row pt-2 pb-2 buttonHelper">
+                <button [disabled]="!updateForm.valid" type="submit" class="btn btn-primary col-3 me-3">
+                    <i class="bi bi-device-hdd"></i>
+                    Update
+                </button>
+                <button (click)="onCancelUpdate()" class="btn btn-warning col-3">
+                    <i class="bi bi-x-circle"></i>
+                    Cancel
+                </button>
+            </div>
+    
+        </form>
+    </div>
+    <div class="overlay">
+    </div>
+</div>

@@ -1,0 +1,105 @@
+<app-full-detail-company [showDetails]="showDetails"></app-full-detail-company>
+<app-company-termination [showTerminationDetails]="showTermination"></app-company-termination>
+<app-edit-company [showUpdate]="showUpdate"></app-edit-company>
+<app-remove [showDeleteRecord]="showDeleteRecord"></app-remove>
+
+<div class="container">
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid justify-content-center">
+
+            <form #searchCompany="ngForm" (ngSubmit)="onSearchCompany()" class="d-flex" role="search">
+
+                <div class="form-floating me-2">
+
+                    <input class="form-control" type="search" placeholder="Type the company" aria-label="Search" ngModel
+                        required name="companyName">
+                    <label for="floatingInput">
+                        <i class="bi bi-building"></i>
+                        Company Name
+                    </label>
+                </div>
+
+                <div class="form-floating">
+
+                    <input class="form-control" type="search" placeholder="Type the country" aria-label="Search"
+                        ngModel name="country">
+                    <label for="floatingInput">
+                        <i class="bi bi-flag"></i>
+                        Country
+                    </label>
+                </div>
+
+                <div class="ms-2 mt-2">
+                    <button [disabled]="!searchCompany.valid" class="ps-4 pe-4 btn btn-outline-success" type="submit">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </nav>
+
+    <table class="table">
+        <thead class="table-dark text-center">
+            <tr>
+                <th scope="col">
+                    <i class="bi bi-building"></i>
+                    Company Name
+                </th>
+                <th scope="col">
+                    <i class="bi bi-postcard"></i>
+                    Company Document
+                </th>
+                <th scope="col">
+                    <i class="bi bi-flag"></i>
+                    Country
+                </th>
+                <th scope="col">
+                    <i class="bi bi-building-x"></i>
+                    End Contract
+                </th>
+                <th scope="col">
+                    <i class="bi bi-pencil-square"></i>
+                    Update
+                </th>
+                <th scope="col">
+                    <i class="bi bi-trash"></i>
+                    Remove
+                </th>
+            </tr>
+        </thead>
+        <tbody class="text-center text-wrap">
+            <tr>
+                <th id="company_name">
+                    <a (click)="onShowDetails()" role="button" style="color: blue; text-decoration: underline;">
+                        Microsoft
+                    </a>
+                </th>
+                <td>
+                    445463218
+                </td>
+                <td>
+                    EUA
+                </td>
+                <td>
+                    <button class="btn btn-warning" (click)="onShowEndContract()">
+                        <i class="bi bi-building-x"></i>
+                    </button>
+                </td>
+                <td>
+                    <button class="btn btn-primary" (click)="onShowUpdate()">
+                        <i class="bi bi-pencil-square"></i>
+                    </button>
+                </td>
+                <td>
+                    <button class="btn btn-danger" (click)="onDeleteRecord()">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+
+</div>

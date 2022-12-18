@@ -1,0 +1,200 @@
+<div [hidden]="!showUpdate">
+    <div class="modalAux">
+        <form (ngSubmit)="onUpdateEmployee()" #updateForm="ngForm">
+    
+            <div class="row">
+                <div class="col">
+                    <label for="exampleInputPassword1" class="form-label">
+                        <i class="bi bi-person-badge"></i>
+                        Employee Name*
+                    </label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="exampleInputPassword1" 
+                        required
+                        ngModel
+                        name="companyName"
+                    >
+                </div>
+                <div class="col">
+                    <label for="exampleInputPassword1" class="form-label">
+                        <i class="bi bi-postcard"></i>
+                        Employee Document*
+                    </label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="exampleInputPassword1"
+                        required
+                        ngModel
+                        name="companyDocument"
+                    >
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col">
+                    <label for="exampleInputPassword1" class="form-label">
+                        <i class="bi bi-globe"></i>
+                        Country*
+                    </label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="exampleInputPassword1" 
+                        required
+                        ngModel
+                        name="country"
+                    >
+                </div>
+                <div class="col">
+                    <label for="exampleInputPassword1" class="form-label">
+                        <i class="bi bi-flag"></i>
+                        State*
+                    </label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="exampleInputPassword1" 
+                        required
+                        ngModel
+                        name="state"
+                    >
+                </div>
+                <div class="col">
+                    <label for="exampleInputPassword1" class="form-label">
+                        <i class="bi bi-geo-alt"></i>
+                        Street*
+                    </label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="exampleInputPassword1"
+                        required
+                        ngModel
+                        name="street"
+                    >
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col">
+                    <label for="exampleInputPassword1" class="form-label">
+                        <i class="bi bi-calendar-week"></i>
+                        Employee Birthdate*
+                    </label>
+                    <input 
+                        type="date" 
+                        class="form-control" 
+                        id="exampleInputPassword1"
+                        required
+                        ngModel
+                        name="companyDocument"
+                    >
+                </div>
+                <div class="col">
+                    <label for="exampleInputPassword1" class="form-label">
+                        <i class="bi bi-person"></i>
+                        Mother Name
+                    </label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="exampleInputPassword1"
+                        ngModel
+                        name="companyDocument"
+                    >
+                </div>
+                <div class="col">
+                    <label for="exampleInputPassword1" class="form-label">
+                        <i class="bi bi-person"></i>
+                        Father Name
+                    </label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="exampleInputPassword1"
+                        ngModel
+                        name="companyDocument"
+                    >
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col">
+                    <label for="exampleInputPassword1" class="form-label">
+                        <i class="bi bi-envelope"></i>
+                        Main email*
+                    </label>
+                    <input 
+                        type="email" 
+                        class="form-control" 
+                        id="exampleInputPassword1"
+                        required
+                        ngModel
+                        name="mainEmail"
+                    >
+                </div>
+                <div class="col">
+                    <label for="exampleInputPassword1" class="form-label">
+                        <i class="bi bi-envelope"></i>
+                        Secundary email
+                    </label>
+                    <input 
+                        type="email" 
+                        class="form-control" 
+                        id="exampleInputPassword1"
+                        ngModel
+                        name="secundaryEmail"
+                    >
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col">
+                    <label for="exampleInputPassword1" class="form-label">
+                        <i class="bi bi-telephone"></i>
+                        Main Telephone*
+                    </label>
+                    <input 
+                        type="tel" 
+                        class="form-control" 
+                        id="exampleInputPassword1"
+                        required
+                        ngModel
+                        name="mainTelephone"
+                    >
+                </div>
+                <div class="col">
+                    <label for="exampleInputPassword1" class="form-label">
+                        <i class="bi bi-telephone"></i>
+                        Secundary Telephone
+                    </label>
+                    <input 
+                        type="tel" 
+                        class="form-control" 
+                        id="exampleInputPassword1"
+                        ngModel
+                        name="secundaryTelephone"
+                    >
+                </div>
+            </div>
+    
+            <div class="row pt-2 pb-2 buttonHelper">
+                <button [disabled]="!updateForm.valid" type="submit" class="btn btn-primary col-3 me-3">
+                    <i class="bi bi-device-hdd"></i>
+                    Update
+                </button>
+                <button (click)="onCancelUpdate()" class="btn btn-warning col-3">
+                    <i class="bi bi-x-circle"></i>
+                    Cancel
+                </button>
+            </div>
+    
+        </form>
+    </div>
+    <div class="overlay">
+    </div>
+</div>

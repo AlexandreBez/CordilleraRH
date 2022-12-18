@@ -1,0 +1,234 @@
+<nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container-fluid">
+
+        <a class="navbar-brand" routerLink="/Home">
+            <img src="assets/images/CordilleraRHLogo.png" alt="Cordillera RH Logo" width="80" height="80"
+                class="d-inline-block align-text-top">
+        </a>
+
+        <a class="navbar-brand text-white" routerLink="/Home">
+            <span>
+                Cordillera RH
+            </span>
+        </a>
+
+        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse menuHelper" id="navbarNav">
+            <ul class="navbar-nav">
+
+                <!-- Home link -->
+                <li class="nav-item">
+                    <a routerLinkActive="active" routerLink="/Home" class="nav-link text-white">
+                        <i class="bi bi-house"></i>
+                        Home
+                    </a>
+                </li>
+
+                <!-- Company section -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link text-white dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-building"></i>
+                        Company
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a routerLinkActive="active" class="dropdown-item" routerLink="/SearchCompany">
+                                <i class="bi bi-search"></i>
+                                Search
+                            </a>
+                        </li>
+                        <li>
+                            <a routerLinkActive="active" class="dropdown-item" routerLink="/NewNationalContract">
+                                <i class="bi bi-node-plus"></i>
+                                New Nacional Contract
+                            </a>
+                        </li>
+                        <li>
+                            <a routerLinkActive="active" class="dropdown-item" routerLink="/NewInternationalContract">
+                                <i class="bi bi-node-plus-fill"></i>
+                                New Internacional Contract
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <a routerLinkActive="active" class="dropdown-item" routerLink="/NacionalSolutions">
+                                <i class="bi bi-map"></i>
+                                Nacional Solutions
+                            </a>
+                        </li>
+                        <li>
+                            <a routerLinkActive="active" class="dropdown-item" routerLink="/InternacionalSolutions">
+                                <i class="bi bi-globe"></i>
+                                Internacional Solutions
+                            </a>
+                        </li>
+                        <li>
+                            <a routerLinkActive="active" class="dropdown-item" routerLink="/NacionalInternacionalSolutions">
+                                <i class="bi bi-compass"></i>
+                                Nacional/Internacional Solutions
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <a routerLinkActive="active" class="dropdown-item" routerLink="/NacionalPartnership">
+                                <i class="bi bi-map"></i>
+                                Nacional Partnership
+                            </a>
+                        </li>
+                        <li>
+                            <a routerLinkActive="active" class="dropdown-item" routerLink="/InternacionalPartnership">
+                                <i class="bi bi-globe"></i>
+                                Internacional Partnership
+                            </a>
+                        </li>
+                        <li>
+                            <a routerLinkActive="active" class="dropdown-item" routerLink="/NacionalInternacionalPartnership">
+                                <i class="bi bi-currency-exchange"></i>
+                                Nacional/Internacional Partnership
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- Employee section -->
+                <li class="nav-item dropdown" routerLinkActive="active">
+                    <a class="nav-link text-white dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-people"></i>
+                        Employees
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a routerLinkActive="active" class="dropdown-item" routerLink="/SearchEmployee">
+                                <i class="bi bi-search"></i>
+                                Search
+                            </a>
+                        </li>
+                        <li>
+                            <a routerLinkActive="active" class="dropdown-item" routerLink="/NewEmployee">
+                                <i class="bi bi-person-plus"></i>
+                                New Employee
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <a routerLinkActive="active" class="dropdown-item" routerLink="/EmployeesSolutions">
+                                <i class="bi bi-person-rolodex"></i>
+                                Employees Solution
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="bi bi-briefcase"></i>
+                                Opportunities                            
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="bi bi-shop-window"></i>
+                                Curiculum Store                            
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="bi bi-person-bounding-box"></i>
+                                MyCandidates                           
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- My section -->
+                <li class="nav-item dropdown" routerLinkActive="active">
+                    <a class="nav-link text-white dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person-heart"></i>
+                        MySelf
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="bi bi-clock"></i>
+                                MyTime
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="bi bi-journal-bookmark"></i>
+                                MySchedules
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="bi bi-briefcase"></i>
+                                Internal Opportunities
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="bi bi-graph-up"></i>
+                                MyWork
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="bi bi-ticket-detailed"></i>
+                                MyTickets
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="bi bi-chat-square-text"></i>
+                                MySuggestions
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="bi bi-people"></i>
+                                MyTeam
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="bi bi-info"></i>
+                                MyInfo
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="bi bi-sliders"></i>
+                                Settings
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" role="button" (click)="onLogout()">
+                                <i class="bi bi-door-closed"></i>
+                                Logout
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</nav>

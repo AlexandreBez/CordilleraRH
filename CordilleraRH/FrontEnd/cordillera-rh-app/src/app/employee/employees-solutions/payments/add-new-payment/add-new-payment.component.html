@@ -1,0 +1,70 @@
+<div [hidden]="!showNewPayment">
+    <div class="modalAux">
+
+        <form (ngSubmit)="onAddPayment()" #addPaymentForm="ngForm" >
+            <div class="row mb-3">
+                <div class="form-floating col">
+                    <input placeholder="Supplier name..." type="text" class="form-control">
+                    <label class="form-label">
+                        <i class="bi bi-file-text"></i>
+                        Type
+                    </label>
+                </div>
+                <div class="form-floating col">
+                    <input placeholder="Supplier name..." type="date" class="form-control">
+                    <label class="form-label">
+                        <i class="bi bi-calendar-week"></i>
+                        Date
+                    </label>
+                </div>
+            </div>
+
+
+            <div class="row mb-3">
+                <div class="form-floating col">
+                    <input placeholder="Supplier document..." type="text" class="form-control">
+                    <label class="form-label">
+                        <i class="bi bi-building"></i>
+                        Company Name
+                    </label>
+                </div>
+                <div class="form-floating col">
+                    <input placeholder="Supplier document..." type="text" class="form-control">
+                    <label class="form-label">
+                        <i class="bi bi-postcard"></i>
+                        Company Document
+                    </label>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="form-floating col mt-3">
+                    <input placeholder="Email..." type="email" class="form-control">
+                    <label class="form-label">
+                        <i class="bi bi-briefcase"></i>
+                        Role
+                    </label>
+                </div>
+                <div class="col">
+                    <label for="formFile" class="form-label">
+                        <i class="bi bi-file-earmark-pdf"></i>
+                        Contract Files
+                    </label>
+                    <input required ngModel name="supplier_contract_files" class="form-control" multiple accept="application/pdf"
+                        type="file" id="formFile">
+                </div>
+            </div>
+
+            <button [disabled]="!addPaymentForm.valid" type="submit" class="btn btn-primary" >
+                <i class="bi bi-device-hdd"></i>
+                Save
+            </button>
+            <button class="btn btn-dark" (click)="onCancel()">
+                <i class="bi bi-x"></i>
+                Cancel
+            </button>
+        </form>
+    </div>
+    <div class="overlay">
+    </div>
+</div>

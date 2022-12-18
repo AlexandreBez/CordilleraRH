@@ -7,15 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  person = {
-    name: "John Mark Willian Doe"
-  };
-
-  timeNow: string = new Intl.DateTimeFormat('pt-BR').format();
+  username = "Joe Doe";
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

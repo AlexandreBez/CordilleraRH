@@ -1,0 +1,761 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>cordillera-rh-app documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">cordillera-rh-app documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  LegalPaymentsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/company/nacional-solutions/payment-assistance/legal-payments/legal-payments.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-legal-payments</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./legal-payments.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./legal-payments.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#showBillReceiptDetails" >showBillReceiptDetails</a>
+                            </li>
+                            <li>
+                                <a href="#showDeleteRecord" >showDeleteRecord</a>
+                            </li>
+                            <li>
+                                <a href="#showNewPaymentRecord" >showNewPaymentRecord</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onBackToPaymentAssitance" >onBackToPaymentAssitance</a>
+                            </li>
+                            <li>
+                                <a href="#onShowDeleteRecord" >onShowDeleteRecord</a>
+                            </li>
+                            <li>
+                                <a href="#onShowNewPaymentRecord" >onShowNewPaymentRecord</a>
+                            </li>
+                            <li>
+                                <a href="#onShowReceipt" >onShowReceipt</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/company/nacional-solutions/payment-assistance/legal-payments/legal-payments.component.ts:13</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="19"
+                            class="link-to-prism">src/app/company/nacional-solutions/payment-assistance/legal-payments/legal-payments.component.ts:19</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onBackToPaymentAssitance"></a>
+                    <span class="name">
+                        <span ><b>onBackToPaymentAssitance</b></span>
+                        <a href="#onBackToPaymentAssitance"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onBackToPaymentAssitance()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="30"
+                            class="link-to-prism">src/app/company/nacional-solutions/payment-assistance/legal-payments/legal-payments.component.ts:30</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onShowDeleteRecord"></a>
+                    <span class="name">
+                        <span ><b>onShowDeleteRecord</b></span>
+                        <a href="#onShowDeleteRecord"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onShowDeleteRecord()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/app/company/nacional-solutions/payment-assistance/legal-payments/legal-payments.component.ts:22</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onShowNewPaymentRecord"></a>
+                    <span class="name">
+                        <span ><b>onShowNewPaymentRecord</b></span>
+                        <a href="#onShowNewPaymentRecord"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onShowNewPaymentRecord()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="34"
+                            class="link-to-prism">src/app/company/nacional-solutions/payment-assistance/legal-payments/legal-payments.component.ts:34</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onShowReceipt"></a>
+                    <span class="name">
+                        <span ><b>onShowReceipt</b></span>
+                        <a href="#onShowReceipt"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onShowReceipt()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="26"
+                            class="link-to-prism">src/app/company/nacional-solutions/payment-assistance/legal-payments/legal-payments.component.ts:26</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showBillReceiptDetails"></a>
+                    <span class="name">
+                        <span ><b>showBillReceiptDetails</b></span>
+                        <a href="#showBillReceiptDetails"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/company/nacional-solutions/payment-assistance/legal-payments/legal-payments.component.ts:12</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showDeleteRecord"></a>
+                    <span class="name">
+                        <span ><b>showDeleteRecord</b></span>
+                        <a href="#showDeleteRecord"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/company/nacional-solutions/payment-assistance/legal-payments/legal-payments.component.ts:11</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showNewPaymentRecord"></a>
+                    <span class="name">
+                        <span ><b>showNewPaymentRecord</b></span>
+                        <a href="#showNewPaymentRecord"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/company/nacional-solutions/payment-assistance/legal-payments/legal-payments.component.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+
+@Component({
+  selector: &#x27;app-legal-payments&#x27;,
+  templateUrl: &#x27;./legal-payments.component.html&#x27;,
+  styleUrls: [&#x27;./legal-payments.component.css&#x27;]
+})
+export class LegalPaymentsComponent implements OnInit {
+
+  showDeleteRecord &#x3D; false;
+  showBillReceiptDetails &#x3D; false;
+  showNewPaymentRecord &#x3D; false;
+
+  constructor(
+    private router: Router
+  ) { }
+
+  ngOnInit(): void {
+  }
+
+  onShowDeleteRecord(){
+    this.showDeleteRecord &#x3D; true;
+  }
+
+  onShowReceipt(){
+    this.showBillReceiptDetails &#x3D; true;
+  }
+
+  onBackToPaymentAssitance(){
+    this.router.navigate([&#x27;NacionalSolutions/PaymentAssistance&#x27;]);
+  }
+
+  onShowNewPaymentRecord(){
+    this.showNewPaymentRecord &#x3D; true;
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;app-delete-register [showDeleteRecord]&#x3D;&quot;showDeleteRecord&quot;&gt;&lt;/app-delete-register&gt;
+&lt;app-bill-receipt [showBillReceiptDetails]&#x3D;&quot;showBillReceiptDetails&quot;&gt;&lt;/app-bill-receipt&gt;
+&lt;app-new-payment [showNewPaymentRecord]&#x3D;&quot;showNewPaymentRecord&quot;&gt;&lt;/app-new-payment&gt;
+
+&lt;h3 class&#x3D;&quot;pt-2&quot;&gt;
+    &lt;button class&#x3D;&quot;btn btn-dark me-2&quot; (click)&#x3D;&quot;onBackToPaymentAssitance()&quot;&gt;
+        &lt;i class&#x3D;&quot;bi bi-arrow-left-circle&quot;&gt;&lt;/i&gt;
+    &lt;/button&gt;
+    &lt;em&gt;Legal Payments&lt;/em&gt;
+&lt;/h3&gt;
+
+&lt;hr&gt;
+
+&lt;div class&#x3D;&quot;d-flex justify-content-center&quot;&gt;
+
+    &lt;div class&#x3D;&quot;form-floating mb-3&quot;&gt;
+        &lt;input type&#x3D;&quot;text&quot; list&#x3D;&quot;datalistOptions&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;floatingInput&quot;
+            placeholder&#x3D;&quot;name@example.com&quot;&gt;
+        &lt;label for&#x3D;&quot;floatingInput&quot;&gt;
+            &lt;i class&#x3D;&quot;bi bi-building&quot;&gt;&lt;/i&gt;
+            Company name
+        &lt;/label&gt;
+
+        &lt;datalist id&#x3D;&quot;datalistOptions&quot;&gt;
+            &lt;option value&#x3D;&quot;San Francisco&quot;&gt;
+            &lt;option value&#x3D;&quot;New York&quot;&gt;
+            &lt;option value&#x3D;&quot;Seattle&quot;&gt;
+            &lt;option value&#x3D;&quot;Los Angeles&quot;&gt;
+            &lt;option value&#x3D;&quot;Chicago&quot;&gt;
+        &lt;/datalist&gt;
+
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;ms-2 mt-2&quot;&gt;
+        &lt;button class&#x3D;&quot;ps-4 pe-4 btn btn-outline-success&quot;&gt;
+            &lt;i class&#x3D;&quot;bi bi-search&quot;&gt;&lt;/i&gt;
+        &lt;/button&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;h5&gt;Company selected: &lt;em&gt;Infratech LTDA.&lt;/em&gt; &lt;/h5&gt;
+
+&lt;button class&#x3D;&quot;btn btn-success mb-2&quot; (click)&#x3D;&quot;onShowNewPaymentRecord()&quot;&gt;
+    &lt;i class&#x3D;&quot;bi bi-plus-circle-dotted&quot;&gt;&lt;/i&gt;
+    New Payment
+&lt;/button&gt;
+
+&lt;table class&#x3D;&quot;table&quot;&gt;
+    &lt;thead class&#x3D;&quot;table-dark text-center&quot;&gt;
+        &lt;tr&gt;
+            &lt;th scope&#x3D;&quot;col&quot;&gt;
+                &lt;i class&#x3D;&quot;bi bi-calendar-week&quot;&gt;&lt;/i&gt;
+                Date
+            &lt;/th&gt;
+            &lt;th scope&#x3D;&quot;col&quot;&gt;
+                &lt;i class&#x3D;&quot;bi bi-receipt&quot;&gt;&lt;/i&gt;
+                Service
+            &lt;/th&gt;
+            &lt;th scope&#x3D;&quot;col&quot;&gt;
+                &lt;i class&#x3D;&quot;bi bi-cash&quot;&gt;&lt;/i&gt;
+                Amount
+            &lt;/th&gt;
+            &lt;th scope&#x3D;&quot;col&quot;&gt;
+                &lt;i class&#x3D;&quot;bi bi-trash&quot;&gt;&lt;/i&gt;
+                Delete
+            &lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody class&#x3D;&quot;text-center&quot;&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                25/04/2020
+            &lt;/td&gt;
+            &lt;td&gt;
+                &lt;a role&#x3D;&quot;button&quot; style&#x3D;&quot;color: blue; text-decoration: underline;&quot; (click)&#x3D;&quot;onShowReceipt()&quot;&gt;
+                    Advocacy Union
+                &lt;/a&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+                $5000,00
+            &lt;/td&gt;
+            &lt;td&gt;
+                &lt;button class&#x3D;&quot;btn btn-danger&quot; (click)&#x3D;&quot;onShowDeleteRecord()&quot;&gt;
+                    &lt;i class&#x3D;&quot;bi bi-trash&quot;&gt;&lt;/i&gt;
+                &lt;/button&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./legal-payments.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><app-delete-register [showDeleteRecord]="showDeleteRecord"></app-delete-register><app-bill-receipt [showBillReceiptDetails]="showBillReceiptDetails"></app-bill-receipt><app-new-payment [showNewPaymentRecord]="showNewPaymentRecord"></app-new-payment><h3 class="pt-2">    <button class="btn btn-dark me-2" (click)="onBackToPaymentAssitance()">        <i class="bi bi-arrow-left-circle"></i>    </button>    <em>Legal Payments</em></h3><hr><div class="d-flex justify-content-center">    <div class="form-floating mb-3">        <input type="text" list="datalistOptions" class="form-control" id="floatingInput"            placeholder="name@example.com">        <label for="floatingInput">            <i class="bi bi-building"></i>            Company name        </label>        <datalist id="datalistOptions">            <option value="San Francisco">            <option value="New York">            <option value="Seattle">            <option value="Los Angeles">            <option value="Chicago">        </datalist>    </div>    <div class="ms-2 mt-2">        <button class="ps-4 pe-4 btn btn-outline-success">            <i class="bi bi-search"></i>        </button>    </div></div><h5>Company selected: <em>Infratech LTDA.</em> </h5><button class="btn btn-success mb-2" (click)="onShowNewPaymentRecord()">    <i class="bi bi-plus-circle-dotted"></i>    New Payment</button><table class="table">    <thead class="table-dark text-center">        <tr>            <th scope="col">                <i class="bi bi-calendar-week"></i>                Date            </th>            <th scope="col">                <i class="bi bi-receipt"></i>                Service            </th>            <th scope="col">                <i class="bi bi-cash"></i>                Amount            </th>            <th scope="col">                <i class="bi bi-trash"></i>                Delete            </th>        </tr>    </thead>    <tbody class="text-center">        <tr>            <td>                25/04/2020            </td>            <td>                <a role="button" style="color: blue; text-decoration: underline;" (click)="onShowReceipt()">                    Advocacy Union                </a>            </td>            <td>                $5000,00            </td>            <td>                <button class="btn btn-danger" (click)="onShowDeleteRecord()">                    <i class="bi bi-trash"></i>                </button>            </td>        </tr>    </tbody></table></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BillReceiptComponent', 'selector': 'app-bill-receipt'},{'name': 'BillReceiptComponent', 'selector': 'app-bill-receipt'},{'name': 'BillReceiptComponent', 'selector': 'app-bill-receipt'},{'name': 'BussinesIntelligenceComponent', 'selector': 'app-bussines-intelligence'},{'name': 'CommonPaymentsComponent', 'selector': 'app-common-payments'},{'name': 'CompanyTerminationComponent', 'selector': 'app-company-termination'},{'name': 'CurriculumStoreComponent', 'selector': 'app-curriculum-store'},{'name': 'DeleteRegisterComponent', 'selector': 'app-delete-register'},{'name': 'DeleteRegisterComponent', 'selector': 'app-delete-register'},{'name': 'DeleteRegisterComponent', 'selector': 'app-delete-register'},{'name': 'EditCompanyComponent', 'selector': 'app-edit-company'},{'name': 'EditComponent', 'selector': 'app-edit'},{'name': 'EditEmployeeComponent', 'selector': 'app-edit-employee'},{'name': 'EmployeesSolutionsComponent', 'selector': 'app-employees-solutions'},{'name': 'EmployeeTerminationComponent', 'selector': 'app-employee-termination'},{'name': 'EndContractComponent', 'selector': 'app-end-contract'},{'name': 'FullDetailCompanyComponent', 'selector': 'app-full-detail-company'},{'name': 'FullDetailEmployeeComponent', 'selector': 'app-full-detail-employee'},{'name': 'GovernmentPaymentsComponent', 'selector': 'app-government-payments'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InfrastructureContractsComponent', 'selector': 'app-infrastructure-contracts'},{'name': 'InternacionalPartnershipComponent', 'selector': 'app-internacional-partnership'},{'name': 'InternacionalSolutionsComponent', 'selector': 'app-internacional-solutions'},{'name': 'InternalOpportunitiesComponent', 'selector': 'app-internal-opportunities'},{'name': 'LegalPaymentsComponent', 'selector': 'app-legal-payments'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MyCandidatesComponent', 'selector': 'app-my-candidates'},{'name': 'MyInfoComponent', 'selector': 'app-my-info'},{'name': 'MySchedulesComponent', 'selector': 'app-my-schedules'},{'name': 'MySuggestionsComponent', 'selector': 'app-my-suggestions'},{'name': 'MyTeamComponent', 'selector': 'app-my-team'},{'name': 'MyTicketsComponent', 'selector': 'app-my-tickets'},{'name': 'MyTimeComponent', 'selector': 'app-my-time'},{'name': 'MyWorkComponent', 'selector': 'app-my-work'},{'name': 'NacionalInternacionalPartnershipComponent', 'selector': 'app-nacional-internacional-partnership'},{'name': 'NacionalInternacionalSolutionsComponent', 'selector': 'app-nacional-internacional-solutions'},{'name': 'NacionalPartnershipComponent', 'selector': 'app-nacional-partnership'},{'name': 'NacionalSolutionsComponent', 'selector': 'app-nacional-solutions'},{'name': 'NewEmployeeComponent', 'selector': 'app-new-employee'},{'name': 'NewInternacionalContracComponent', 'selector': 'app-new-internacional-contrac'},{'name': 'NewNacionalContractComponent', 'selector': 'app-new-nacional-contract'},{'name': 'NewPaymentComponent', 'selector': 'app-new-payment'},{'name': 'NewPaymentComponent', 'selector': 'app-new-payment'},{'name': 'NewPaymentComponent', 'selector': 'app-new-payment'},{'name': 'NewSupplierComponent', 'selector': 'app-new-supplier'},{'name': 'OpportunitiesComponent', 'selector': 'app-opportunities'},{'name': 'PaymentAssistanceComponent', 'selector': 'app-payment-assistance'},{'name': 'RemoveComponent', 'selector': 'app-remove'},{'name': 'RenewComponent', 'selector': 'app-renew'},{'name': 'SearchCompanyComponent', 'selector': 'app-search-company'},{'name': 'SearchEmployeeComponent', 'selector': 'app-search'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SpinnerComponent', 'selector': 'app-spinner'},{'name': 'SuppliersContractsComponent', 'selector': 'app-suppliers-contracts'},{'name': 'SuppliersDetailsComponent', 'selector': 'app-suppliers-details'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'LegalPaymentsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'LegalPaymentsComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

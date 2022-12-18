@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+        
+            <app-spinner [hidden]="!isLoading"></app-spinner>
+
+            <form [hidden]="isLoading" class="formHelper col-md-10" (ngSubmit)="onSubmit()" #form="ngForm">
+
+                <div class="form-floating mb-3" [hidden]="isLoggingMode">
+                    <p class="text-white">After you click on recover, wait the email for set a new password, please check your spam as well</p>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email" ngModel required>
+                    <label for="email">
+                        <i class="bi bi-envelope"></i>
+                        Email address
+                    </label>
+                </div>
+
+                <div class="form-floating" [hidden]="!isLoggingMode">
+                    <input type="password" [required]="isLoggingMode" class="form-control" id="password" name="password" placeholder="Password" ngModel >
+                    <label for="floatingPassword">
+                        <i class="bi bi-lock"></i>
+                        Password
+                    </label>
+                </div>
+            
+                <button [disabled]="form.invalid" type="submit" id="hoverHelper" class="btn bg-dark btn-outline-success mt-2 mb-2 loginHelper">
+                    <i [hidden]="isLoggingMode" class="bi bi-door-open"></i>
+                    <i [hidden]="!isLoggingMode" class="bi bi-key"></i>
+                    {{ isLoggingMode ? 'Login' : 'Recover' }}
+                </button>
+                <br>
+                <button [hidden]="!isLoggingMode" (click)="isLoggingMode = false" class="btn btn-light recoverHelper">
+                    <i class="bi bi-key"></i>
+                    Recover password
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

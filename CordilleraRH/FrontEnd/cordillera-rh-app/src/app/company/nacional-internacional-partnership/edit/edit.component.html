@@ -1,0 +1,85 @@
+<div [hidden]="!showEdit">
+    <div class="modalAux">
+        <div [hidden]="!isEditedSuccefully" class="alert alert-success" role="alert">
+            <i class="bi bi-check-circle"></i>
+            Successfully updated 
+        </div>
+
+        <div [hidden]="!isEditedFailed" class="alert alert-danger" role="alert">
+            <i class="bi bi-exclamation-circle"></i>
+            An error occured...Please try again later or call the IT team
+        </div>
+
+        <app-spinner [hidden]="!isLoading"></app-spinner>
+
+        <form (ngSubmit)="onEdit()" #editForm="ngForm" >
+            <div class="row mb-3">
+                <div class="form-floating col">
+                    <input placeholder="Supplier name..." type="text" class="form-control">
+                    <label class="form-label">
+                        <i class="bi bi-truck"></i>
+                        Company name
+                    </label>
+                </div>
+                <div class="form-floating col">
+                    <input placeholder="Supplier document..." type="text" class="form-control">
+                    <label class="form-label">
+                        <i class="bi bi-postcard"></i>
+                        Company Document
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input placeholder="Country..." type="text" class="form-control">
+                <label class="form-label">
+                    <i class="bi bi-globe"></i>
+                    Country
+                </label>
+            </div>
+            <div class="form-floating mb-3">
+                <input placeholder="State..." type="text" class="form-control">
+                <label class="form-label">
+                    <i class="bi bi-map"></i>
+                    State
+                </label>
+            </div>
+            <div class="form-floating mb-3">
+                <input placeholder="Adress..." type="text" class="form-control">
+                <label class="form-label">
+                    <i class="bi bi-geo-alt"></i>
+                    Adress
+                </label>
+            </div>
+
+            <div class="row mb-3">
+                <div class="form-floating col">
+                    <input placeholder="Email..." type="email" class="form-control">
+                    <label class="form-label">
+                        <i class="bi bi-envelope"></i>
+                        Email
+                    </label>
+                </div>
+                <div class="form-floating col">
+                    <input placeholder="Telephone..." type="tel" class="form-control">
+                    <label class="form-label">
+                        <i class="bi bi-telephone"></i>
+                        Telephone
+                    </label>
+                </div>
+            </div>
+
+
+            <button [disabled]="!editForm.valid" type="submit" class="btn btn-primary" >
+                <i class="bi bi-device-hdd"></i>
+                Update
+            </button>
+            <button class="btn btn-dark" (click)="onCancel()">
+                <i class="bi bi-x"></i>
+                Cancel
+            </button>
+        </form>
+    </div>
+    <div class="overlay">
+    </div>
+</div>

@@ -1,0 +1,28 @@
+.container{
+    background-color: rgba(255, 255, 255, 0.637);
+    border-radius: 5px;
+}
+
+a{
+    color: black;
+}
+
+a:hover{
+    color: rgb(37, 161, 243);
+    border-radius: 22px;
+}
+
+.nav-item{
+    background-color: rgb(37, 161, 243);
+    border-radius: 22px;
+}
+
+.nav-item:hover{
+    background-color: rgb(0, 0, 0);
+    border-radius: 22px;
+}
+
+.active{
+    background-color: rgb(0, 0, 0);
+    border-radius: 22px;
+}

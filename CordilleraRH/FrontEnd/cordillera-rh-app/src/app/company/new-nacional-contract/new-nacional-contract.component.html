@@ -1,0 +1,121 @@
+<div class="container-fluid mb-3">
+
+    <h3 class="pt-2"><em>Nacional Contract</em></h3>
+
+    <hr>
+
+    <form (ngSubmit)="onCreateNewNacionalContract()" #nacionalForm="ngForm">
+
+        <div class="row">
+            <div class="col">
+                <label for="formFile" class="form-label">
+                    <i class="bi bi-images"></i>
+                    Logo file
+                </label>
+                <input class="form-control" type="file" id="formFile" ngModel name="logo">
+            </div>
+            <div class="form-floating col mb-3 mt-3">
+                <input type="text" class="form-control" placeholder="company name" id="exampleInputPassword1" required ngModel name="companyName">
+                <label for="exampleInputPassword1" class="form-label">
+                    <i class="bi bi-building"></i>
+                    Company Name*
+                </label>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="form-floating col">
+                <input type="text" placeholder="country" class="form-control" id="exampleInputPassword1" required ngModel name="country">
+                <label for="exampleInputPassword1" class="form-label">
+                    <i class="bi bi-globe"></i>
+                    Country*
+                </label>
+            </div>
+            <div class="form-floating col">
+                <input type="text" placeholder="state" class="form-control" id="exampleInputPassword1" required ngModel name="state">
+                <label for="exampleInputPassword1" class="form-label">
+                    <i class="bi bi-flag"></i>
+                    State*
+                </label>
+            </div>
+            <div class="form-floating col">
+                <input type="text" placeholder="street" class="form-control" id="exampleInputPassword1" required ngModel name="street">
+                <label for="exampleInputPassword1" class="form-label">
+                    <i class="bi bi-geo-alt"></i>
+                    Street*
+                </label>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="form-floating col">
+                <input type="text" placeholder="document" class="form-control" id="exampleInputPassword1" required ngModel
+                name="companyDocument">
+                <label for="exampleInputPassword1" class="form-label">
+                    <i class="bi bi-postcard"></i>
+                    Company Document*
+                </label>
+            </div>
+            <div class="form-floating col">
+                <input type="email" placeholder="email" class="form-control" id="exampleInputPassword1" required ngModel name="mainEmail">
+                <label for="exampleInputPassword1" class="form-label">
+                    <i class="bi bi-envelope"></i>
+                    Main email*
+                </label>
+            </div>
+            <div class="form-floating col">
+                <input type="email" placeholder="email" class="form-control" id="exampleInputPassword1" ngModel name="secundaryEmail">
+                <label for="exampleInputPassword1" class="form-label">
+                    <i class="bi bi-envelope"></i>
+                    Secundary email
+                </label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-floating col mt-3">
+                <input type="tel" placeholder="telephone" class="form-control" id="exampleInputPassword1" required ngModel name="mainTelephone">
+                <label for="exampleInputPassword1" class="form-label">
+                    <i class="bi bi-telephone"></i>
+                    Main Telephone*
+                </label>
+            </div>
+            <div class="form-floating col mt-3">
+                <input type="tel" placeholder="telephone" class="form-control" id="exampleInputPassword1" ngModel name="secundaryTelephone">
+                <label for="exampleInputPassword1" class="form-label">
+                    <i class="bi bi-telephone"></i>
+                    Secundary Telephone
+                </label>
+            </div>
+            <div class="col mb-3">
+
+                <label for="formFile" class="form-label">
+                    <i class="bi bi-file-earmark-pdf"></i>
+                    Contract Files
+                </label>
+                <input class="form-control" type="file" id="formFile" multiple accept="application/pdf" required ngModel
+                name="contract_files">
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col form-check ms-4 mt-2">
+                <input required ngModel name="termContract" type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Client agreed with the terms</label>
+            </div>
+        </div>
+
+        <div class="row pt-2 pb-2 buttonHelper">
+            <button [disabled]="!nacionalForm.valid" type="submit" class="btn btn-primary col-3 me-3">
+                <i class="bi bi-device-hdd"></i>
+                Save
+            </button>
+            <button (click)="onCancelNewNacionalContract()" class="btn btn-warning col-3">
+                <i class="bi bi-x-circle"></i>
+                Cancel
+            </button>
+        </div>
+
+    </form>
+</div>
